@@ -1,0 +1,145 @@
+.container {
+  width: 60%;
+  height: 70vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $colorbg;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  padding: 25px 30px;
+
+  font-family: sans-serif;
+
+  .header {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+
+
+    /* header left */
+
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+      }
+
+      .header-left-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+          color: white;
+        }
+
+        .header-left-content-info {
+          display: flex;
+          gap: 15px;
+
+          .bank {
+            display: flex;
+            gap: 5px;
+            i {
+              color: white;
+            }
+
+            p {
+              letter-spacing: 1px;
+              span {
+                color: $colorDollar;
+              }
+            }
+          }
+          .money {
+            display: flex;
+            gap: 5px;
+            i {
+              color: white;
+            }
+
+            p {
+              letter-spacing: 1px;
+              span {
+                color: $colorDollar;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* header middle */
+
+    .header-middle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input[type="search"] {
+        border-radius: 9999px;
+        border: none;
+        height: 25px;
+        width: 200px;
+        background-color: #111115;
+        padding: 0 10px;
+        color: white;
+      }
+    }
+
+    /* header right */
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+
+      .content-cart {
+        background-color: $colorActive;
+        padding: 5px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 30px;
+        width: 115px;
+        cursor: pointer;
+
+        h3 {
+          color: white;
+        }
+        i {
+          color: white;
+          font-size: 0.8rem;
+        }
+      }
+
+      .price-cart {
+        padding: 15px;
+        width: 20%;
+        height: 20px;
+        max-width: max-content;
+        border-radius:9999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          color: white;
+          span {
+            color: $colorDollar;
+          }
+        }
+
+      }
+    }
+  }
+}

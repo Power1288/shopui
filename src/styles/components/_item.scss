@@ -1,0 +1,49 @@
+.item-slot {
+  background-color: #17161C;
+  display: grid;
+  grid-template-rows: 20% 50% 30%;
+  padding: 10px 5px;
+  border-radius: 9px;
+  margin: 10px;
+
+
+
+
+  img {
+    align-self: center;
+    justify-self: center;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .content-infoItem {
+    width: 80%;
+    display:grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
+    align-self: end;
+
+    button {
+      background-color: $colorActive;
+      border-radius: 9px;
+      border: none;
+      color: white;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .price-item {
+      padding: 10px;
+      background-color: $colorActive;
+      border-radius: 9px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  p {
+    color: white;
+
+  }
+}
