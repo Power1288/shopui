@@ -5,7 +5,6 @@ import "./styles/index.scss"
 import {Provider} from "react-redux";
 import {applyMiddleware, createStore} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {BrowserRouter} from "react-router-dom";
 import thunk from "redux-thunk";
 
 import rootReducer from "./reducers";
@@ -19,9 +18,7 @@ const store = createStore(
 
 root.render(
     <Provider store={store}>
-        <BrowserRouter>
             <App />
-        </BrowserRouter>
     </Provider>
 );
 

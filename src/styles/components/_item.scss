@@ -17,11 +17,27 @@
   }
 
   .content-infoItem {
-    width: 80%;
+    width: 100%;
     display:grid;
     grid-template-columns: 60% 40%;
     gap: 20px;
     align-self: end;
+    justify-self: center;
+
+    @media screen and (max-width: 1578px) {
+      width: 80%;
+      justify-self: start;
+    }
+
+    @media screen and (max-width: 1130px) {
+      width: 60%;
+      justify-self: start;
+    }
+
+    @media screen and (max-width: 948px) {
+      width: 90%;
+      justify-self: center;
+    }
 
     button {
       background-color: $colorActive;
@@ -37,9 +53,16 @@
       background-color: $colorActive;
       border-radius: 9px;
       height: 20px;
+      width: max-content;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media screen and (max-width: 1280px) {
+        width: 75px;
+      }
+
+
     }
   }
   p {
