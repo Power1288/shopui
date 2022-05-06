@@ -1,7 +1,8 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {filterItem} from "../actions/filter.action";
 import $ from 'jquery';
+import {clearCart} from "../actions/cart.action";
 
 const Header = () => {
 
@@ -13,7 +14,20 @@ const Header = () => {
 
         $.post('http://shop/closeMenu', JSON.stringify({}));
 
+        dispatch(clearCart([]))
 
+        const priceCart = document.getElementById("cart-price");
+        priceCart.innerHTML = 0 + "<span>$</span>";
+
+
+    }
+    const money = useSelector(state => state.userReducer.money)
+    const bank = useSelector(state => state.userReducer.bank)
+    const total = useSelector(state => state.cartReducer.total)
+    const handleBuyCart = () => {
+        if (money >= total) {
+
+        }
     }
 
     return (
@@ -43,10 +57,10 @@ const Header = () => {
             <div className="header-right">
                 <div className="content-cart">
                     <i className="fa-solid fa-cart-shopping"></i>
-                    <h3>acheter</h3>
+                    <h3 onClick={handleBuyCart}>acheter</h3>
                 </div>
                 <div className="price-cart">
-                    <p>0 <span>$</span></p>
+                    <p id="cart-price">0 <span>$</span></p>
                 </div>
                 <i style={{color:"white",cursor:"pointer",fontSize:"1rem"}} className="fa-solid fa-xmark" onClick={() => handleClose()}></i>
             </div>

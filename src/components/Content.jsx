@@ -1,8 +1,15 @@
 import React,{useState,useEffect} from 'react';
 import GridItem from "./GridItem";
+import {useDispatch} from "react-redux";
+import {loadCart} from "../actions/item.action";
+import {loadUser} from "../actions/user.action";
+
+
 
 const Content = () => {
 
+
+    const dispatch = useDispatch();
 
     const choise = ["Tout","Boisson","Nourriture","Divers"];
     const [choiseState,setChoiseState] = useState("Tout");
@@ -31,6 +38,10 @@ const Content = () => {
                    const dataBank = data.bankMoney
                    const divBank = document.getElementById("dataBank")
                    divBank.innerHTML = dataBank + "<span>$</span>";
+
+                   dispatch(loadUser({money:dataMoney,bank:dataBank}));
+
+                   dispatch(loadCart(data.items))
                }
             }
         })
