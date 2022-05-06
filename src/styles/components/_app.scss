@@ -9,9 +9,9 @@
   display: grid;
   grid-template-rows: 20% 80%;
   padding: 25px 30px;
-
   font-family: sans-serif;
 
+  -webkit-user-select: none;
 
 
   @media screen and (max-width: 1280px) {

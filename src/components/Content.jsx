@@ -43,6 +43,14 @@ const Content = () => {
 
                    dispatch(loadCart(data.items))
                }
+            }else if (data.type === "updateMoney") {
+                const dataMoney2 = data.money
+                const divMoney2 = document.getElementById("dataMoney")
+                divMoney2.innerHTML = dataMoney2 + "<span>$</span>";;
+
+                const dataBank2 = data.bank
+                const divBank2 = document.getElementById("dataBank")
+                divBank2.innerHTML = dataBank2 + "<span>$</span>";
             }
         })
     },[])

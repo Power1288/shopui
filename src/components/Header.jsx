@@ -24,9 +24,36 @@ const Header = () => {
     const money = useSelector(state => state.userReducer.money)
     const bank = useSelector(state => state.userReducer.bank)
     const total = useSelector(state => state.cartReducer.total)
+    const cart = useSelector(state => state.cartReducer.cart)
+
+
+    let paiementMode = ""
     const handleBuyCart = () => {
         if (money >= total) {
+            paiementMode = "money"
+        }else if (bank >= total) {
+            paiementMode = "bank"
+        }else {
+            paiementMode = "none"
+        }
 
+        if (paiementMode !== "none") {
+            $.post('http://shop/buyCart', JSON.stringify(
+                {
+                    paiementMode: paiementMode,
+                    total: total,
+                    cart:cart,
+                    error: false
+                })).done((data) => {
+                console.log(data)
+                dispatch(clearCart([]))
+            })
+
+        }else {
+            $.post('http://shop/buyCart', JSON.stringify(
+                {
+                    error : true
+                }))
         }
     }
 

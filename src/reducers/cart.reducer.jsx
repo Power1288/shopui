@@ -26,6 +26,9 @@ export default function cartReducer(state = initialState, action) {
                 total: state.total + action.payload.price
             }
         case CLEAR_CART:
+            const priceCart2 = document.getElementById("cart-price");
+            priceCart2.innerHTML = 0 + "<span>$</span>";
+
             return {
                 cart: action.payload,
                 total: 0
